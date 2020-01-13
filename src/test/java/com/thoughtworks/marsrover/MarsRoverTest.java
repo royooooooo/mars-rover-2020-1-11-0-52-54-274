@@ -11,4 +11,10 @@ public class MarsRoverTest {
     MarsRover marsRover = new MarsRover(0, 0, Direction.N);
     assertEquals(marsRover.getCurrentPositionAndDirection(), "0, 0, N");
   }
+
+  @Test
+  public void should_accept_init_command() {
+    MarsRover marsRover = new MarsRover("0, 1, S");
+    assertEquals(marsRover.getCurrentPositionAndDirection(), "0, 1, S");
+  }
 }
