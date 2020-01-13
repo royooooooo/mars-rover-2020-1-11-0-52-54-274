@@ -2,6 +2,10 @@ package com.thoughtworks.marsrover;
 
 import static java.lang.Integer.parseInt;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class MarsRover {
 
   private int x;
@@ -21,12 +25,8 @@ public class MarsRover {
     this.direction = Direction.valueOf(initCommandStr[2]);
   }
 
-  public String getCurrentPositionAndDirection() {
-    return String.format("%d, %d, %s", this.x, this.y, this.direction.toString());
-  }
-
   public void executeCommand(Command command) {
-    if (command.equals(Command.Move)) {
+    if (command.equals(Command.M)) {
       if (this.direction.equals(Direction.N)) {
         this.y++;
       } else if (this.direction.equals(Direction.S)) {
@@ -41,5 +41,22 @@ public class MarsRover {
     } else if (command.equals(Command.R)) {
       this.direction = this.direction.turnRight();
     }
+  }
+
+  public void executeCommand(String multipleCommand) {
+    List<Command> commands = generateMultipleCommand(multipleCommand);
+    for (Command command : commands) {
+      executeCommand(command);
+    }
+  }
+
+  private List<Command> generateMultipleCommand(String multipleCommand) {
+    return Arrays.stream(multipleCommand.split(""))
+        .map(Command::valueOf)
+        .collect(Collectors.toList());
+  }
+
+  public String getCurrentPositionAndDirection() {
+    return String.format("%d, %d, %s", this.x, this.y, this.direction.toString());
   }
 }

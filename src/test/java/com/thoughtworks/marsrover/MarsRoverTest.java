@@ -21,7 +21,7 @@ public class MarsRoverTest {
   @Test
   public void should_correctly_execute_the_move_command() {
     MarsRover marsRover = new MarsRover("0, 1, S");
-    marsRover.executeCommand(Command.Move);
+    marsRover.executeCommand(Command.M);
     assertEquals(marsRover.getCurrentPositionAndDirection(), "0, 0, S");
   }
 
@@ -32,5 +32,12 @@ public class MarsRoverTest {
     assertEquals(marsRover.getCurrentPositionAndDirection(), "0, 1, E");
     marsRover.executeCommand(Command.R);
     assertEquals(marsRover.getCurrentPositionAndDirection(), "0, 1, S");
+  }
+
+  @Test
+  public void should_correctly_execute_the_multiple_command() {
+    MarsRover marsRover = new MarsRover("0, 1, S");
+    marsRover.executeCommand("MLMLMMRM");
+    assertEquals(marsRover.getCurrentPositionAndDirection(),"2, 2, E");
   }
 }
