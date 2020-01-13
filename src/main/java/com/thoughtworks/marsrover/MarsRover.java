@@ -10,39 +10,39 @@ public class MarsRover {
 
   private int x;
   private int y;
-  private Direction direction;
+  private Direction facing;
 
-  public MarsRover(int x, int y, Direction direction) {
+  public MarsRover(int x, int y, Direction facing) {
     this.x = x;
     this.y = y;
-    this.direction = direction;
+    this.facing = facing;
   }
 
   public MarsRover(String initCommand) {
     String[] initCommandStr = initCommand.split(", ");
     this.x = parseInt(initCommandStr[0]);
     this.y = parseInt(initCommandStr[1]);
-    this.direction = Direction.valueOf(initCommandStr[2]);
+    this.facing = Direction.valueOf(initCommandStr[2]);
   }
 
   public void executeCommand(Command command) {
     if (command.equals(Command.M)) {
       executeMoveCommand();
     } else if (command.equals(Command.L)) {
-      this.direction = this.direction.turnLeft();
+      this.facing = this.facing.turnLeft();
     } else if (command.equals(Command.R)) {
-      this.direction = this.direction.turnRight();
+      this.facing = this.facing.turnRight();
     }
   }
 
   private void executeMoveCommand() {
-    if (this.direction.equals(Direction.N)) {
+    if (this.facing.equals(Direction.N)) {
       this.y++;
-    } else if (this.direction.equals(Direction.S)) {
+    } else if (this.facing.equals(Direction.S)) {
       this.y--;
-    } else if (this.direction.equals(Direction.W)) {
+    } else if (this.facing.equals(Direction.W)) {
       this.x--;
-    } else if (this.direction.equals(Direction.E)) {
+    } else if (this.facing.equals(Direction.E)) {
       this.x++;
     }
   }
@@ -61,6 +61,6 @@ public class MarsRover {
   }
 
   public String getCurrentPositionAndDirection() {
-    return String.format("%d, %d, %s", this.x, this.y, this.direction.toString());
+    return String.format("%d, %d, %s", this.x, this.y, this.facing.toString());
   }
 }
