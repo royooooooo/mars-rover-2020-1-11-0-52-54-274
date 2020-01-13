@@ -27,19 +27,23 @@ public class MarsRover {
 
   public void executeCommand(Command command) {
     if (command.equals(Command.M)) {
-      if (this.direction.equals(Direction.N)) {
-        this.y++;
-      } else if (this.direction.equals(Direction.S)) {
-        this.y--;
-      } else if (this.direction.equals(Direction.W)) {
-        this.x--;
-      } else if (this.direction.equals(Direction.E)) {
-        this.x++;
-      }
+      executeMoveCommand();
     } else if (command.equals(Command.L)) {
       this.direction = this.direction.turnLeft();
     } else if (command.equals(Command.R)) {
       this.direction = this.direction.turnRight();
+    }
+  }
+
+  private void executeMoveCommand() {
+    if (this.direction.equals(Direction.N)) {
+      this.y++;
+    } else if (this.direction.equals(Direction.S)) {
+      this.y--;
+    } else if (this.direction.equals(Direction.W)) {
+      this.x--;
+    } else if (this.direction.equals(Direction.E)) {
+      this.x++;
     }
   }
 
