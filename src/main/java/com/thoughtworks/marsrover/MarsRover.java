@@ -27,21 +27,14 @@ public class MarsRover {
 
   public void executeCommand(Command command) {
     if (command.equals(Command.Move)) {
-      switch (this.direction) {
-        case N:
-          this.y++;
-          break;
-        case S:
-          this.y--;
-          break;
-        case W:
-          this.x--;
-          break;
-        case E:
-          this.x++;
-          break;
-        default:
-          break;
+      if (this.direction.equals(Direction.N)) {
+        this.y++;
+      } else if (this.direction.equals(Direction.S)) {
+        this.y--;
+      } else if (this.direction.equals(Direction.W)) {
+        this.x--;
+      } else if (this.direction.equals(Direction.E)) {
+        this.x++;
       }
     }
   }
