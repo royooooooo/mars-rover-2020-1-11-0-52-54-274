@@ -1,5 +1,7 @@
 package com.thoughtworks.marsrover;
 
 public enum Command {
-  Move
+  Move,
+  R,
+  L
 }
