@@ -24,4 +24,25 @@ public class MarsRover {
   public String getCurrentPositionAndDirection() {
     return String.format("%d, %d, %s", this.x, this.y, this.direction.toString());
   }
+
+  public void executeCommand(Command command) {
+    if (command.equals(Command.Move)) {
+      switch (this.direction) {
+        case N:
+          this.y++;
+          break;
+        case S:
+          this.y--;
+          break;
+        case W:
+          this.x--;
+          break;
+        case E:
+          this.x++;
+          break;
+        default:
+          break;
+      }
+    }
+  }
 }
