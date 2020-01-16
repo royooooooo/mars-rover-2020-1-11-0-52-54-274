@@ -13,6 +13,11 @@ public class EastDirection implements Direction {
   }
 
   @Override
+  public void turnRight(MarsRover marsRover) {
+    marsRover.setFacing(new SouthDirection());
+  }
+
+  @Override
   public String toString() {
     return "E";
   }
