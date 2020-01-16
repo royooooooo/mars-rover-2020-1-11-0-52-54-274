@@ -1,8 +1,8 @@
 package com.thoughtworks.marsrover.command;
 
-import com.thoughtworks.marsrover.MarsRover;
+import com.thoughtworks.marsrover.RoverStatus;
 
 public interface Command {
 
-  void doOperate(MarsRover marsRover);
+  void doOperate(RoverStatus roverStatus);
 }

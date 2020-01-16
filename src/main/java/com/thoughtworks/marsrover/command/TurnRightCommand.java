@@ -1,11 +1,11 @@
 package com.thoughtworks.marsrover.command;
 
-import com.thoughtworks.marsrover.MarsRover;
+import com.thoughtworks.marsrover.RoverStatus;
 
-public class TurnRightCommand implements Command{
+public class TurnRightCommand implements Command {
 
   @Override
-  public void doOperate(MarsRover marsRover) {
-    marsRover.getFacing().turnRight(marsRover);
+  public void doOperate(RoverStatus roverStatus) {
+    roverStatus.getFacing().turnRight(roverStatus);
   }
 }

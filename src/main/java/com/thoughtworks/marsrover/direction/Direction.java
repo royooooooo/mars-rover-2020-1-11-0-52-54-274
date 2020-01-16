@@ -1,12 +1,12 @@
 package com.thoughtworks.marsrover.direction;
 
-import com.thoughtworks.marsrover.MarsRover;
+import com.thoughtworks.marsrover.RoverStatus;
 
 public interface Direction {
 
-  void move(MarsRover marsRover);
+  void move(RoverStatus roverStatus);
 
-  void turnLeft(MarsRover marsRover);
+  void turnLeft(RoverStatus roverStatus);
 
-  void turnRight(MarsRover marsRover);
+  void turnRight(RoverStatus roverStatus);
 }
