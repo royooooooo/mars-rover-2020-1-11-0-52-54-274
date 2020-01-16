@@ -1,4 +1,6 @@
-package com.thoughtworks.marsrover;
+package com.thoughtworks.marsrover.command;
+
+import com.thoughtworks.marsrover.MarsRover;
 
 public class TurnLeftCommand implements Command{
 

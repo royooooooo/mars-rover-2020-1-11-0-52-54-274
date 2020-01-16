@@ -1,5 +1,7 @@
 package com.thoughtworks.marsrover;
 
+import com.thoughtworks.marsrover.command.Command;
+import com.thoughtworks.marsrover.direction.Direction;
 import lombok.Data;
 
 @Data

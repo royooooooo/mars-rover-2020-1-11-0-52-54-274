@@ -1,4 +1,6 @@
-package com.thoughtworks.marsrover;
+package com.thoughtworks.marsrover.direction;
+
+import com.thoughtworks.marsrover.MarsRover;
 
 public interface Direction {
 

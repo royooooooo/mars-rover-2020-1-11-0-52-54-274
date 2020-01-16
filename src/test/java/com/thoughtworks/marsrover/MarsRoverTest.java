@@ -2,6 +2,10 @@ package com.thoughtworks.marsrover;
 
 import static org.junit.Assert.assertEquals;
 
+import com.thoughtworks.marsrover.command.MoveCommand;
+import com.thoughtworks.marsrover.command.TurnLeftCommand;
+import com.thoughtworks.marsrover.command.TurnRightCommand;
+import com.thoughtworks.marsrover.direction.EastDirection;
 import org.junit.Test;
 
 public class MarsRoverTest {
