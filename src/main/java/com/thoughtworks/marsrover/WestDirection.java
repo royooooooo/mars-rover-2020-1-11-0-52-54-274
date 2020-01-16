@@ -8,6 +8,11 @@ public class WestDirection implements Direction {
   }
 
   @Override
+  public void turnLeft(MarsRover marsRover) {
+    marsRover.setFacing(new SouthDirection());
+  }
+
+  @Override
   public String toString() {
     return "W";
   }

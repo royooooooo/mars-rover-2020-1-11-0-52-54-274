@@ -25,4 +25,14 @@ public class MarsRoverTest {
     marsRover.executeCommand(new MoveCommand());
     assertEquals(marsRover.getCurrentLocation(), "1, 0, E");
   }
+
+  @Test
+  public void should_correctly_execute_the_turn_left_direction_command() {
+    MarsRover marsRover = new MarsRover(0, 0, new EastDirection());
+    marsRover.executeCommand(new TurnLeftCommand());
+    assertEquals(marsRover.getCurrentLocation(), "0, 0, N");
+
+    marsRover.executeCommand(new TurnLeftCommand());
+    assertEquals(marsRover.getCurrentLocation(), "0, 0, W");
+  }
 }
