@@ -5,7 +5,7 @@ import com.thoughtworks.marsrover.RoverStatus;
 public class TurnLeftCommand implements Command {
 
   @Override
-  public void doOperate(RoverStatus roverStatus) {
-    roverStatus.getFacing().turnLeft(roverStatus);
+  public RoverStatus doOperate(RoverStatus roverStatus) {
+    return roverStatus.getFacing().turnLeft(roverStatus);
   }
 }

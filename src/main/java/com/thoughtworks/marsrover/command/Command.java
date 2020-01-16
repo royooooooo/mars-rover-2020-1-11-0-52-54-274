@@ -4,5 +4,5 @@ import com.thoughtworks.marsrover.RoverStatus;
 
 public interface Command {
 
-  void doOperate(RoverStatus roverStatus);
+  RoverStatus doOperate(RoverStatus roverStatus);
 }

@@ -5,18 +5,30 @@ import com.thoughtworks.marsrover.RoverStatus;
 public class WestDirection implements Direction {
 
   @Override
-  public void move(RoverStatus roverStatus) {
-    roverStatus.setX(roverStatus.getX() - 1);
+  public RoverStatus move(RoverStatus roverStatus) {
+    return RoverStatus.builder()
+        .x(roverStatus.getX() - 1)
+        .y(roverStatus.getY())
+        .facing(roverStatus.getFacing())
+        .build();
   }
 
   @Override
-  public void turnLeft(RoverStatus roverStatus) {
-    roverStatus.setFacing(new SouthDirection());
+  public RoverStatus turnLeft(RoverStatus roverStatus) {
+    return RoverStatus.builder()
+        .x(roverStatus.getX())
+        .y(roverStatus.getY())
+        .facing(new SouthDirection())
+        .build();
   }
 
   @Override
-  public void turnRight(RoverStatus roverStatus) {
-    roverStatus.setFacing(new NorthDirection());
+  public RoverStatus turnRight(RoverStatus roverStatus) {
+    return RoverStatus.builder()
+        .x(roverStatus.getX())
+        .y(roverStatus.getY())
+        .facing(new NorthDirection())
+        .build();
   }
 
   @Override

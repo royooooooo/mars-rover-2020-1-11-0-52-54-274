@@ -14,7 +14,7 @@ public class MarsRover {
   }
 
   public void executeCommand(Command command) {
-    command.doOperate(this.roverStatus);
+    this.roverStatus = command.doOperate(this.roverStatus);
   }
 
   public String getCurrentLocation() {

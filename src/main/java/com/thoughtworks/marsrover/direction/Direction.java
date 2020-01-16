@@ -4,9 +4,9 @@ import com.thoughtworks.marsrover.RoverStatus;
 
 public interface Direction {
 
-  void move(RoverStatus roverStatus);
+  RoverStatus move(RoverStatus roverStatus);
 
-  void turnLeft(RoverStatus roverStatus);
+  RoverStatus turnLeft(RoverStatus roverStatus);
 
-  void turnRight(RoverStatus roverStatus);
+  RoverStatus turnRight(RoverStatus roverStatus);
 }
