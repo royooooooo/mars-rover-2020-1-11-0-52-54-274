@@ -4,7 +4,7 @@ public class NorthDirection implements Direction {
 
   @Override
   public void move(MarsRover marsRover) {
-    marsRover.setX(marsRover.getY() + 1);
+    marsRover.setY(marsRover.getY() + 1);
   }
 
   @Override
