@@ -1,14 +1,14 @@
 package com.thoughtworks.marsrover;
 
-public class EastDirection implements Direction {
+public class SouthDirection implements Direction {
 
   @Override
   public void move(MarsRover marsRover) {
-    marsRover.setX(marsRover.getX() + 1);
+    marsRover.setY(marsRover.getY() - 1);
   }
 
   @Override
   public String toString() {
-    return "E";
+    return "S";
   }
 }
